@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud Detection</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000; /* Black background for the whole page */
+            font-family: Arial, sans-serif;
+            color: #ffffff; /* White text for contrast */
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #343a40; /* Darker background for the card */
+            color: white; /* White text for contrast */
+        }
+        .btn-custom {
+            background-color: #ff9800; /* Orange color for the button */
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #e68900; /* Darker shade of orange on hover */
+        }
+        h1, h2, h3, p {
+            color: #ff9800; /* Orange color for headers and paragraph */
+        }
+        .form-control {
+            background-color: #495057; /* Darker background for input fields */
+            color: white;
+            border: 1px solid #ff9800; /* Orange border for input fields */
+        }
+        .header-text {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #ff9800; /* Orange color for the header text */
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-text">Project made by - Raghav Mehta</div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <h1 class="text-center">Credit Card Fraud Detection Model</h1>
+                    <p class="text-center">Enter the following features separated by commas:</p>
+                    <form action="/predict" method="post">
+                        <div class="form-group">
+                            <label for="features">Features</label>
+                            <input type="text" class="form-control" id="features" name="features" placeholder="Enter features separated by commas" required>
+                        </div>
+                        <button type="submit" class="btn btn-custom btn-block">Submit</button>
+                    </form>
+                    <div class="mt-4">
+                        <h2>Prediction: {{ prediction_text }}</h2>
+                        <h3>Training Accuracy: {{ train_acc }}</h3>
+                        <h3>Test Accuracy: {{ test_acc }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
