@@ -1,4 +1,4 @@
-# SafetyWhat: Object Detection Model By Raghav Mehta (12319917)
+#Object Detection Model By Raghav 
 
 ## Overview
 This project uses YOLO (You Only Look Once) for real-time object detection in video files. It processes each frame of a given video, performs object detection, and saves cropped images of detected objects. Additionally, it tracks object counts and computes inference speed (FPS).
